@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-cream: #FAF7F2;
+    --card-paper: #FFFFFF;
+    --card-paper-subtle: #F6F2EA;
+    --border-editorial: #E6DFD5;
+    --border-editorial-dark: #D4CABF;
+    --ink-black: #141413;
+    --ink-charcoal: #2C2B29;
+    --ink-muted: #6B665E;
+    --forest-green: #1F5F4A;
+    --forest-green-hover: #174838;
+    --forest-green-light: #EBF3EF;
+    --accent-gold: #C49B45;
+    --accent-gold-light: #FBF5E8;
+    --accent-gold-dark: #9E782F;
+  }
+
+  html, body {
+    background-color: var(--bg-cream);
+    color: var(--ink-black);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Playfair Display', 'Fraunces', Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Passport Stamp Effect */
+.passport-stamp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border: 1.5px dashed var(--forest-green);
+  color: var(--forest-green);
+  background-color: var(--forest-green-light);
+  padding: 0.25rem 0.625rem;
+  border-radius: 4px;
+  position: relative;
+  box-shadow: inset 0 0 0 1px rgba(31, 95, 74, 0.15);
+}
+
+.passport-stamp-gold {
+  border: 1.5px dashed var(--accent-gold-dark);
+  color: var(--accent-gold-dark);
+  background-color: var(--accent-gold-light);
+  box-shadow: inset 0 0 0 1px rgba(196, 155, 69, 0.15);
+}
+
+.passport-stamp-circle {
+  border: 2px solid var(--forest-green);
+  outline: 1px dashed var(--forest-green);
+  outline-offset: -4px;
+}
+
+/* Academic Editorial card styling */
+.editorial-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-editorial);
+  box-shadow: 0 1px 3px rgba(20, 20, 19, 0.03), 0 4px 12px rgba(20, 20, 19, 0.02);
+}
+
+.editorial-card-subtle {
+  background: var(--card-paper-subtle);
+  border: 1px solid var(--border-editorial);
+}
+
+/* Custom Print Styles for clean Academic Dossier PDF */
+@media print {
+  body {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+
+  header, nav, .no-print, button, input, textarea, select {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .editorial-card {
+    border: 1px solid #D1D5DB !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+    margin-bottom: 1.5rem !important;
+    background: #FFFFFF !important;
+  }
+
+  .page-break {
+    page-break-before: always;
+  }
+}

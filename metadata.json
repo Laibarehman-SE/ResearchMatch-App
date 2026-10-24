@@ -1,0 +1,6 @@
+{
+  "name": "ResearchMatch",
+  "description": "AI Research Application Assistant for students applying to foreign research internships, MS, and PhD programs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
